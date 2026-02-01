@@ -11,16 +11,16 @@ import { ProfileDataStorage } from '../../services/profile-data.storage';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileFormPage {
-  private readonly dataService = inject(ProfileDataStorage);
+  private readonly dataStorage = inject(ProfileDataStorage);
 
   protected readonly dataResource = resource({
-    loader: async () => (await this.dataService.get()) ?? createProfile(),
+    loader: async () => (await this.dataStorage.get()) ?? createProfile(),
   });
 
   constructor() {
     effect(() => {
       if (this.dataResource.hasValue()) {
-        this.dataService.set(this.dataResource.value());
+        this.dataStorage.set(this.dataResource.value());
       }
     });
   }

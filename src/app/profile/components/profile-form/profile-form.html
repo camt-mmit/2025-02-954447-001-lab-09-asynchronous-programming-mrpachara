@@ -29,6 +29,9 @@
   <fieldset [disabled]="form.friends().disabled()" class="_friends-form">
     <legend>
       Friends
+      <span class="app-cl-number"
+        >({{ form.friends().metadata(friendsCountKey)!() | number }})</span
+      >
       <button type="button" (click)="addFriend()" class="app-cmp-button">
         <i class="material-symbols-outlined">add</i>
       </button>

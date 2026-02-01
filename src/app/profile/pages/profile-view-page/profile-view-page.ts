@@ -10,9 +10,9 @@ import { ProfileDataStorage } from '../../services/profile-data.storage';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileViewPage {
-  private readonly dataService = inject(ProfileDataStorage);
+  private readonly dataStorage = inject(ProfileDataStorage);
 
   protected readonly dataResource = resource({
-    loader: async () => await this.dataService.get(),
+    loader: async () => await this.dataStorage.get(),
   });
 }
