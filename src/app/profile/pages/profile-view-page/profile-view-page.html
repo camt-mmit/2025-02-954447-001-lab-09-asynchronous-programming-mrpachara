@@ -2,6 +2,9 @@
   @if (dataResource.value(); as data) {
     <app-profile-view [data]="data" />
   } @else {
-    <p>Not Found</p>
+    <p class="_message">
+      <i class="material-symbols-outlined">warning</i>
+      Not Found!!!
+    </p>
   }
 }
