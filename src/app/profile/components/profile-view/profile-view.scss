@@ -8,3 +8,7 @@
 ._main-data {
   @include data.layout-data-list();
 }
+
+._autobiography {
+  white-space: pre-wrap;
+}
