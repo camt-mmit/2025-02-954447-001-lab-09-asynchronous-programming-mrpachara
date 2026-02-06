@@ -18,9 +18,9 @@ export class ProfileFormPage {
   });
 
   constructor() {
-    effect(() => {
+    effect(async () => {
       if (this.dataResource.hasValue()) {
-        this.dataStorage.set(this.dataResource.value());
+        await this.dataStorage.set(this.dataResource.value());
       }
     });
   }

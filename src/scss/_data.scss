@@ -36,6 +36,7 @@
 
   &:is(dl) {
     display: grid;
+    align-items: baseline;
     grid-template-columns: auto 1fr;
 
     column-gap: var(--_column-gap);
@@ -47,7 +48,12 @@
 
     & > dd {
       margin-left: 0px;
-      text-align: justify;
+
+      @layer {
+        & {
+          text-align: justify;
+        }
+      }
     }
   }
 }
