@@ -1,6 +1,6 @@
 <fieldset [disabled]="form().disabled()" class="_main-form">
   <legend>
-    <button type="button" (click)="addItem()" class="app-cmp-button">
+    <button type="button" (click)="addItem()" class="app-cmp-button app-cl-filled">
       <i class="material-symbols-outlined">add</i>
       Section
     </button>
@@ -37,7 +37,7 @@
                     Number
                     <span class="_value-title-no app-cl-number">{{ $index + 1 }}</span>
                   </b>
-                  <input type="number" [formField]="value" />
+                  <input type="number" [formField]="value.value" />
                 </label>
               </span>
 
